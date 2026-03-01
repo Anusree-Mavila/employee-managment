@@ -15,7 +15,7 @@ public class Conn {
             c = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/employee_db",
                     "root",
-                    ""
+                    "Anusree@03"
             );
             System.out.println("database connected succesfully");
             s = c.createStatement();
