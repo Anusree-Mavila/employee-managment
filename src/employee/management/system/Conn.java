@@ -6,22 +6,25 @@ import java.sql.Statement;
 
 public class Conn {
 
-    Connection c;
+    Connection con;   // renamed from c → con (clear name)
     Statement s;
 
     public Conn() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            c = DriverManager.getConnection(
+
+            con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/employee_db",
                     "root",
-                    ""
+                    "Anusree@03"
             );
-            System.out.println("database connected succesfully");
-            s = c.createStatement();
+
+            s = con.createStatement();
+
+            System.out.println("Database connected successfully");
+
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
-
